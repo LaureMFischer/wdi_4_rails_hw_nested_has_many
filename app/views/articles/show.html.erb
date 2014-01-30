@@ -1,4 +1,9 @@
 <dl>
   <dt>Title</dt><dd><%= @article.title %></dd>
   <dt>Body</dt><dd><%= @article.body %></dd>
+
+  <dt>Comments</dt><dd><% @article.comments.each do |comment| %>
+    <%= comment.body %>
+    <% end %>
+  </dd>
 </dl>
