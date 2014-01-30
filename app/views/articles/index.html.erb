@@ -4,7 +4,7 @@
 <% @articles.each do |article| %>
   <li>Title: <%= link_to article.title, user_article_path(article.user.id, article.id) %><br>
   Number of Comments: <%= article.comments.count %><br>
-  Body: <%= article.body %><br>
+  Body: <%= truncate(article.body, length: 20) %><br>
   Author: <%= link_to article.user.name, user_path(article.user.id) %>
   </li>
   <% end %>
