@@ -3,7 +3,8 @@
   <dt>Email</dt><dd><%= @user.email %></dd>
 
   <dt>Articles</dt><dd><% @articles.each do |article| %>
-    <%= article.title %>
+    <%= article.title %><br>
+    Article preview: <%= article.body %>
     <% end %>
   </dd>
 </dl>
