@@ -3,7 +3,12 @@
   <dt>Body</dt><dd><%= @article.body %></dd>
 
   <dt>Comments</dt><dd><% @article.comments.each do |comment| %>
-    <%= comment.body %>
+    <ul>
+    <li><%= comment.body %></li>
+    </ul>
     <% end %>
   </dd>
 </dl>
+
+<%= link_to 'Edit Article', edit_user_article_path(@user.id, @article.id) %> ||
+<%= link_to 'Add a Comment', new_user_article_comment_path(@user.id, @article.id) %>
