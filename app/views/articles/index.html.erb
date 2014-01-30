@@ -5,7 +5,7 @@
   <li>Title: <%= article.title%><br>
   Number of Comments: <%= article.comments.count %><br>
   Body: <%= article.body %><br>
-  Author: <%= article.user.name %>
+  Author: <%= link_to article.user.name, user_path(article.user.id) %>
   </li>
   <% end %>
 </ol>
