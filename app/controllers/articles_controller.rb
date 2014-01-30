@@ -3,7 +3,6 @@ class ArticlesController < ApplicationController
   before_action :get_user
 
   def index
-    @articles = Article.order(:created_at)
 
     if params[:user_id]
       @articles = User.find(:user_id).articles.order(:created_at)
