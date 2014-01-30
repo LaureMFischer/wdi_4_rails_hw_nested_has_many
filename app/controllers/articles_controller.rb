@@ -27,6 +27,23 @@ class ArticlesController < ApplicationController
     redirect_to user_path(@user.id)
   end
 
+  def edit
+    @article = Article.find(params[:id]) if params.key?(:id)
+  end
+
+  def update
+    @article = Article.find(params[:id]) if params.key?(:id)
+    @article.assign_attributes(articles_params)
+
+    if @article.save
+      flash[:notice] = 'Updated the article!'
+      redirect_to action: :show
+    else
+      flash.now[:errors] = @article.errors.full_messages
+      render :edit
+    end
+  end
+
   private
 
   def articles_params

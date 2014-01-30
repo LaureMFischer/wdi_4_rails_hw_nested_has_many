@@ -7,6 +7,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<h1><%= link_to 'SharedBlog', root_path %></h1>
+  <% if flash[:error].present? %>
+  <p><%= flash[:error] %></p>
+  <% end %>
+
+  <% if flash[:notice].present? %>
+  <p><%= flash[:notice] %></p>
+  <% end %>
 
 <%= yield %>
 
